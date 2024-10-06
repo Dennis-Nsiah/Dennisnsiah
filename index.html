@@ -1,0 +1,237 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Professional Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("Gr5Q1ZEobRfmdKpJa"); // Replace YOUR_USER_ID with the actual User ID from EmailJS dashboard
+   })();
+</script>
+
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <a href="#home" class="logo">
+                        <img src="Images/Third Logo.png" alt="The Six Tech Logo"> 
+                    </a>
+                    <div class="hamburger" id="hamburger">
+                        &#9776; <!-- This is the hamburger icon (☰) -->
+                    </div>
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#Skills">Skills</a></li>
+                        <li><a href="#Experience">Experience</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        
+        
+    
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <h2>Hi there, <br>I'm <span class="highlight">Dennis Nsiah</span></h2>
+                    <p>I’m a passionate <strong id="dynamic-text">IT Enthusiast</strong> dedicated to continuously learning and exploring new possibilities in the ever-evolving tech landscape</p>
+
+
+                    <a href="#about" class="btn">About Me</a>
+        
+                    <!-- Social Media Icons -->
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/yourprofile" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@yourprofile" target="_blank" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://telegram.me/yourprofile" target="_blank" class="social-icon">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com/yourprofile" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="Images/Profile3.JPG" alt="Dennis Nsiah">
+                </div>
+            </div>
+        </section>
+        
+<!-- Skills Section -->
+<section id="Skills">
+    <div class="skillsContainer">
+        <h2 class="skillsTitle">My Skills</h2>
+        <ul class="skillsGrid">
+            <li class="skillItem">
+                <div class="skillCard">
+                    <img src="Images/html.png" alt="HTML5" class="skillImage">
+                    <span class="skillName">HTML5</span>
+                </div>
+            </li>
+            <li class="skillItem">
+                <div class="skillCard">
+                    <img src="Images/css.png" alt="CSS3" class="skillImage">
+                    <span class="skillName">CSS3</span>
+                </div>
+            </li>
+            <li class="skillItem">
+                <div class="skillCard">
+                    <img src="Images/javascript.png" alt="JavaScript" class="skillImage">
+                    <span class="skillName">JavaScript</span>
+                </div>
+            </li>
+            <li class="skillItem">
+                <div class="skillCard">
+                    <img src="Images/react.png" alt="React.js" class="skillImage">
+                    <span class="skillName">React.js</span>
+                </div>
+            </li>
+            <li class="skillItem">
+                <div class="skillCard">
+                    <img src="Images/js.png" alt="Node.js" class="skillImage">
+                    <span class="skillName">Node.js</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- Experiences Section -->
+<section id="Experience" class="experiences-section">
+    <div class="container">
+        <h2 class="section-heading">Experience</h2>
+        <div class="experience-list">
+            <div class="experience-card">
+                <h3>Front End Designer</h3>
+                <p class="company-name">The 6 Tech</p>
+                <p class="experience-date">January 2017 - Present</p>
+                <p class="experience-description">
+                    Freelance Frontend Designer ~ Delivering exceptional digital experiences for clients across various industries.
+                </p>
+            </div>
+            <div class="experience-card">
+                <h3>Web Developer</h3>
+                <p class="company-name">Company Name 2</p>
+                <p class="experience-date">June 2022 - December 2022</p>
+                <p class="experience-description">
+                    Developed responsive web applications and improved user experience through front-end technologies.
+                </p>
+            </div>
+            <div class="experience-card">
+                <h3>Junior Developer</h3>
+                <p class="company-name">Company Name 3</p>
+                <p class="experience-date">January 2021 - May 2022</p>
+                <p class="experience-description">
+                    Assisted in the development of web applications and collaborated with cross-functional teams.
+                </p>
+            </div>
+            <!-- Add more experience cards as needed -->
+        </div>
+    </div>
+</section>
+<!-----------------Contact form--------------------------->
+<section id="contact">
+    <div class="containerr">
+        <div id="form-message" class="form-message"></div>
+        <form id="contact-form" class="form-containerr">
+            <div class="headline"><span>Contact me</span></div>
+            <div class="form-line success">
+                <input type="text" class="form-input" name="name" value="" required>
+                <label class="top">Name</label>
+                <div class="check-label"></div>
+            </div>
+            <div class="form-line">
+                <input type="email" class="form-input" name="email" required>
+                <label>Your email *</label>
+                <div class="error-label">Field is required!</div>
+                <div class="check-label"></div>
+            </div>
+            <div class="form-line">
+                <input type="text" class="form-input" name="subject">
+                <label>Subject</label>
+                <div class="check-label"></div>
+            </div>
+            <div class="form-line">
+                <textarea class="form-input" name="message" required></textarea>
+                <label>Message</label>
+                <div class="check-label"></div>
+                <div class="error-label">Field is required!</div>
+            </div>
+            <input type="submit" class="form-button" value="Submit">
+        </form>
+    </div>
+</section>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+          <div class="footer-content">
+              <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+              <ul class="social-links">
+                  <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                  <li><a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                  <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+  <script type="text/javascript">
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from refreshing the page
+
+        // Send form data via EmailJS
+        emailjs.sendForm('service_gb2zjnc', 'template_xcwexn5', this)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            const messageElement = document.getElementById('form-message');
+            messageElement.innerHTML = "Message sent successfully!";
+            messageElement.className = "form-message success"; // Add success class
+        }, function(error) {
+            console.log('FAILED...', error);
+            const messageElement = document.getElementById('form-message');
+            messageElement.innerHTML = "Failed to send message!";
+            messageElement.className = "form-message error"; // Add error class
+        });
+
+        // Optionally, clear the form fields after submission
+        this.reset();
+    });
+</script>
+
+ 
+  
+
+    <script src="script.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+    </style>
+</body>
+</html>

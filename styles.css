@@ -1,0 +1,960 @@
+/* Resetting some default styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.navbar {
+    background-color: white;
+    color: #fff;
+    padding: 5px 20px; /* Keep padding minimal */
+    height: 50px; /* Set a fixed height for the navbar */
+    display: flex;
+    align-items: center; /* Center items vertically */
+
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    position: fixed; /* Fixes the navbar to the top of the viewport */
+    top: 0; /* Aligns the navbar at the top */
+    left: 0; /* Aligns the navbar at the left */
+    right: 0; /* Aligns the navbar at the right */
+    z-index: 1000; /* Ensures the navbar stays above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow below the navbar */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px; /* Add padding to the container for both left and right */
+}
+
+.logo {
+    display: flex; /* Use flex to align items */
+    align-items: center; /* Center items vertically */
+    margin-left: 100px; /* Adjust margin as needed */
+}
+
+.navbar .logo img {
+    height: 100px; /* Increase the height of the logo */
+    width: auto; /* Ensure width is auto to maintain aspect ratio */
+    margin-right: 10px; /* Add some space between the logo and text */
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Increased gap for better spacing */
+    margin-right: 100px; /* Shift nav links away from the right */
+}
+
+.nav-links li {
+    position: relative; /* Necessary for the ::after element */
+}
+
+.nav-links li a {
+    color: #2c2c2c;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 15px; /* Add padding around links */
+    border-radius: 5px; /* Add a small border radius to the links */
+    transition: color 0.5s ease; /* Smooth transition for color */
+}
+
+/* Hover Effect for the Red Line */
+.nav-links li a::after {
+    content: ''; /* Empty content for the line */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Thickness of the line */
+    background-color: rgb(250, 73, 73); /* Red color for the line */
+    transform: scaleX(0); /* Initially hidden (collapsed) */
+    transition: transform 0.5s ease; /* Smooth expand effect */
+    transform-origin: right; /* Starts the line from right */
+}
+
+.nav-links li a:hover {
+    color: #1d1b1b; /* Light text color on hover */
+}
+
+.nav-links li a:hover::after {
+    transform: scaleX(1); /* Expands the line on hover */
+    transform-origin: left; /* Line expands from left to right */
+}
+
+.hero {
+    position: relative; /* Allows for positioning of pseudo-elements */
+    overflow: hidden; /* Hides any overflow from the pseudo-element */
+}
+
+.hero::before {
+    content: ""; /* Necessary for the pseudo-element */
+    position: absolute; /* Positioning relative to the hero section */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Cover the entire hero section */
+    background-image: url('Images/background.jpg'); /* Background image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    animation: floating 10s ease-in-out infinite; /* Animation for floating effect */
+    filter: blur(8px); /* Blur effect */
+    z-index: 1; /* Position below the text */
+}
+
+.hero::after {
+    content: ""; /* Necessary for the pseudo-element */
+    position: absolute; /* Positioning relative to the hero section */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Cover the entire hero section */
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    z-index: 1; /* Position below the text */
+}
+
+.hero .container {
+    position: relative; /* Needed for positioning child elements */
+    z-index: 2; /* Ensure content is above the overlay */
+    color: #ffffff; /* Text color */
+    padding: 300px 20px; /* Top & bottom padding */
+    text-align: left; /* Align text to the left */
+    padding-right: 400px;
+    padding-left: 250px;
+}
+
+/* Keyframes for floating effect */
+@keyframes floating {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 10%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+/* Text Section */
+.hero-text {
+    max-width: 50%; /* Limit the text to 50% of the container */
+}
+
+.hero h2 {
+    font-family: 'Montserrat', sans-serif; /* Font family for the heading */
+    font-size: 3.5rem; /* Larger font size for a bolder statement */
+    color: #ffffff; /* White color for contrast */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow for depth */
+    margin: 0; /* Remove default margin */
+}
+
+.hero p {
+    font-family: 'Poppins', sans-serif; /* Clean and modern font */
+    font-size: 1.6rem; /* Slightly larger font size for emphasis */
+    color: #f5f5f5; /* Softer white for smoother contrast */
+    margin: 25px 0; /* Adjusted spacing around the paragraph */
+    line-height: 1.7; /* Improved readability with increased line height */
+    letter-spacing: 0.5px; /* Slight letter spacing for a more modern look */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* Hover effect to enhance interactivity */
+.hero p:hover {
+    color: #e0e0e0; /* Slightly lighter color on hover */
+    transform: translateY(-3px); /* Subtle upward movement on hover */
+}
+#dynamic-text {
+    font-weight: bold;
+    color: #d44949; /* Color of the text */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for text opacity */
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+
+
+strong {
+    color: rgb(238, 54, 54); /* Change strong text color */
+    font-weight: 700; /* Bold weight */
+}
+
+.highlight {
+    color: rgb(238, 54, 54); /* Highlight color */
+    font-weight: bold; /* Make it bold */
+}
+
+/* Enhanced Button Styles */
+.btn {
+    display: inline-block; /* Treat as a block for padding */
+    padding: 15px 30px; /* Increased padding for a larger, more prominent button */
+    background: linear-gradient(135deg, rgb(238, 54, 54), rgb(255, 120, 120)); /* Add a gradient background */
+    color: #fff; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 30px; /* More rounded corners for a modern look */
+    font-weight: bold; /* Make the text bold */
+    font-size: 1.1rem; /* Slightly increase the font size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, rgba(238, 54, 54, 0.9), rgba(255, 120, 120, 0.9)); /* Darken the gradient on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Increase the shadow on hover */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Image Section */
+.hero-image {
+    max-width: 50%; /* Adjust the container width for better balance */
+    margin-right: -200px; /* Adjust the negative margin slightly */
+}
+
+.hero-image img {
+    width: 500px; /* Keep the current width */
+    height: 500px; /* Keep the current height */
+    border-radius: 50%; /* Maintain the circular shape */
+    object-fit: cover; /* Ensures the image fits nicely without distortion */
+    object-position: center;  /* Keeps the image centered */
+    transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
+}
+
+.hero-image img:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Adds a shadow effect on hover */
+}
+
+
+
+/* Social Media Icons */
+.social-media {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the icons */
+    gap: 15px; /* Space between icons */
+    margin-top: 15px; /* Space above the icons */
+    margin-left: -70px;
+}
+
+.social-media a {
+    display: inline-block; /* Makes the anchor tag behave like a block */
+    background-color: black; /* Black background for circular container */
+    border-radius: 50%; /* Circular shape */
+    width: 50px; /* Width of the circular container */
+    height: 50px; /* Height of the circular container */
+    display: flex; /* Use flex to center the icon */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-decoration: none; /* Remove underline from links */
+   
+}
+
+.social-media i {
+    color: white; /* Icon color */
+    font-size: 20px; /* Adjust icon size */
+}
+
+.social-icon:hover {
+    background-color: rgb(240, 96, 96); /* Change background color on hover */
+    color: white; /* Ensure icon color stays white on hover */
+}
+
+/* Ensure the icons are aligned with Font Awesome */
+.fab {
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 1.2rem; /* Adjust icon size */
+}
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px; /* Size of the hamburger icon */
+    cursor: pointer; /* Change cursor on hover */
+    color: #2c2c2c; /* Color of the icon */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column; /* Stack vertically when displayed */
+        width: 100%; /* Full width */
+        position: absolute; /* Position absolutely */
+        top: 60px; /* Position below the navbar */
+        left: 0; /* Align to the left */
+        background-color: rgba(255, 255, 255, 0.9); /* Background for links */
+        z-index: 999; /* Keep it on top */
+    }
+    .nav-links.show {
+        display: flex; /* Show links when toggled */
+    }
+    .hamburger {
+        display: block; /* Show the hamburger icon on small screens */
+    }
+    .hero-image img {
+        width: 200px; /* Increase the width of the image */
+        height: 200px; /* Match the height with the width for a circular shape */
+        border-radius: 50%; /* Maintain the circular shape */
+        object-fit: cover; /* Ensures the image fits nicely without distortion */
+    }
+    .hero-image {
+        max-width: 50%; /* Adjust the container width for better balance */
+        margin-right: -50px; /* Adjust the negative margin slightly */
+    }
+    .logo {
+        display: flex; /* Use flex to align items */
+        align-items: center; /* Center items vertically */
+        margin-left: -50px; /* Adjust margin as needed */
+    }
+    .btn {
+        width: 100%; /* Make buttons full width */
+    }
+    .social-media a {
+        width: 20px; /* Reduce icon size */
+        height: 20px; /* Reduce icon size */
+    }
+    .hero .container {
+        padding: 80px 10px; /* Adjust padding for very small screens */
+    }
+    .hero h2 {
+        font-size: 1.8rem; /* Further reduce font size */
+    }
+    .hero p {
+        font-size: 0.9rem; /* Further reduce font size */
+    }
+}
+
+
+@media (max-width: 576px) {
+    .btn {
+        width: 100%; /* Make buttons full width */
+    }
+    .social-media a {
+        width: 20px; /* Reduce icon size */
+        height: 20px; /* Reduce icon size */
+    }
+    .hero .container {
+        padding: 80px 10px; /* Adjust padding for very small screens */
+    }
+    .hero h2 {
+        font-size: 1.8rem; /* Further reduce font size */
+    }
+    .hero p {
+        font-size: 0.9rem; /* Further reduce font size */
+    }
+}
+
+
+/* Skills Section Styling */
+#Skills {
+    padding: 200px 0;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    position: relative;
+    overflow: hidden;
+}
+
+.skillsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.skillsTitle {
+    font-size: 3rem; /* Font size for the heading */
+    margin-bottom: 50px; /* Space below the heading */
+    color: #4A90E2; /* Use a bright accent color */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 2px; /* Space between letters */
+    font-weight: 700; /* Bold font weight */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15); /* Add a soft shadow */
+    position: relative; /* Position relative for absolute positioning of pseudo-elements */
+    display: inline-block; /* Allow width adjustment */
+}
+
+/* Add decorative lines or shapes to the heading */
+.skillsTitle::before,
+.skillsTitle::after {
+    content: ''; /* Empty content for pseudo-elements */
+    display: block; /* Make them block elements */
+    width: 50px; /* Width of the lines */
+    height: 4px; /* Height of the lines */
+    background: #4A90E2; /* Color of the lines */
+    margin: 20px auto; /* Center them */
+    transition: width 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for heading */
+.skillsTitle:hover::before,
+.skillsTitle:hover::after {
+    width: 100px; /* Expand lines on hover */
+}
+.skillsGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.skillItem {
+    flex: 1 1 200px; /* Flexible width with a minimum width of 200px */
+    margin: 20px;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Move down slightly */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.skillItem.visible {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move back to original position */
+}
+
+.skillCard {
+    background: white;
+    padding: 30px; /* Increased padding for more spacious feel */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden; /* To create a clipping effect */
+}
+
+.skillCard:hover {
+    transform: translateY(-10px) scale(1.05); /* Scale up slightly on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skillImage {
+    width: 120px;  /* Increased width */
+    height: 120px; /* Increased height */
+    margin-bottom: 15px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.skillCard:hover .skillImage {
+    transform: rotate(10deg) scale(1.1); /* Slight rotation and scale on hover */
+}
+
+.skillName {
+    font-size: 1.2rem; /* Slightly larger font size */
+    color: #333;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.skillName::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: #4A90E2; /* Accent color for the underline */
+    margin: 10px auto 0; /* Centered and added margin */
+    transition: width 0.3s ease; /* Smooth transition for the underline */
+}
+
+.skillCard:hover .skillName::after {
+    width: 100%; /* Full width on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .skillsGrid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skillItem {
+        margin: 15px 0;
+    }
+}
+
+/* Experiences Section Styles */
+.experiences-section {
+    padding: 200px 0;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-heading {
+    text-align: center; /* Center the heading */
+    font-size: 3.5rem; /* Larger font size for emphasis */
+    font-weight: 700; /* Bolder font for prominence */
+    color: #007bff; /* Bright accent color */
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block; /* Allows for the ::before element */
+    text-transform: uppercase; /* Uppercase letters for a modern look */
+    letter-spacing: 1px; /* Space between letters for a clean look */
+}
+
+.section-heading::before {
+    content: "";
+    position: absolute;
+    width: 80px; /* Line width */
+    height: 5px; /* Line height */
+    background-color: #007bff; /* Bright accent color */
+    bottom: -10px; /* Position below the text */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.section-heading:hover::before {
+    width: 100%; /* Expand on hover */
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.experience-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap for responsiveness */
+    justify-content: center; /* Center align items */
+    gap: 30px; /* Space between items */
+    margin-top: 20px; /* Space above experience cards */
+}
+
+.experience-card {
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 12px; /* Rounded corners for a softer look */
+    padding: 30px; /* More padding for spacious feel */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+    transform: translateY(30px); /* Initial position for animation */
+    opacity: 0; /* Initial opacity for fade-in effect */
+    transition: all 0.4s ease; /* Smooth transition */
+    width: 100%; /* Full width on small screens */
+    max-width: 400px; /* Max width for cards */
+    text-align: center; /* Center text within cards */
+    cursor: pointer; /* Pointer cursor to indicate interactivity */
+    position: relative; /* For pseudo-elements */
+    overflow: hidden; /* Hide overflowing elements */
+}
+
+.experience-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.experience-card::after {
+    content: "";
+    position: absolute;
+    width: 100%; /* Full width overlay */
+    height: 100%; /* Full height overlay */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 123, 255, 0.1); /* Soft blue overlay */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for overlay */
+}
+
+.experience-card:hover::after {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.experience-card h3 {
+    font-size: 2rem; /* Larger font for job title */
+    color: #007bff; /* Bright accent color for titles */
+    margin-bottom: 10px; /* Space below title */
+    transition: color 0.3s ease; /* Transition for color change */
+}
+
+.experience-card:hover h3 {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+.company-name {
+    font-style: italic; /* Italic for company name */
+    color: #666; /* Gray color */
+    font-weight: bold; /* Bold for emphasis */
+    margin: 5px 0; /* Space above and below */
+}
+
+.experience-date {
+    color: #999; /* Lighter gray for dates */
+    margin: 10px 0;
+    font-size: 0.9rem; /* Slightly smaller font */
+}
+
+.experience-description {
+    color: #333; /* Dark text for descriptions */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+/* Icon Styles */
+.experience-icon {
+    font-size: 50px; /* Size of the icon */
+    color: #007bff; /* Color of the icon */
+    margin-bottom: 15px; /* Space below icon */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.experience-card:hover .experience-icon {
+    transform: scale(1.1); /* Scale up icon on hover */
+}
+
+/* Animation on Scroll */
+.experience-card.visible {
+    transform: translateY(0); /* Move to original position */
+    opacity: 1; /* Fade in */
+    transition: all 0.5s ease-in-out; /* Smooth fade-in transition */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .experience-card {
+        width: 60%; /* Wider cards on smaller screens */
+    }
+
+    .section-heading {
+        font-size: 2.1rem; /* Smaller heading on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-card {
+        width: 60%; /* Full width on very small screens */
+    }
+
+    .section-heading {
+        font-size: 1.5rem; /* Even smaller heading */
+    }
+}
+
+/*-----------form Contact------------------------*/
+
+.containerr {
+	max-width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.form-containerr {
+	display: flex;
+	justify-content: center;
+	flex-flow: wrap;
+	background-color: #fff;
+	width: 600px;
+	padding: 60px 60px 140px;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+	position: relative;
+}
+.form-line {
+	width: 100%;
+	display: block;
+	position: relative;
+	transition: .3s all ease;
+	padding-top: 10px;
+}
+.form-line + .form-line {
+	margin-top: 30px;
+}
+.form-line label {
+	display: block;
+	position: absolute;
+	top: 15px;
+	left: 0;
+	font-size: 20px;
+	color: #ccc;
+	transition: .3s all ease;
+	z-index: 1;
+}
+.form-input {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid #ccc;
+	padding: 0 0 10px;
+	font-size: 16px;
+	color: #000;
+	outline: none;
+	position: relative;
+	z-index: 2;
+	background-color: transparent;
+	transition: .3s all ease;
+	width: 100%;
+}
+textarea.form-input {
+	resize: vertical;
+}
+.form-input:focus + label, 
+.form-line label.top {
+	font-size: 20px;
+	top: -10px;
+	color: #2f4231;
+}
+.form-input:focus {
+	border-bottom-color: #2f4231;
+}
+.error-label,
+.check-label {
+	font-size: 10px;
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+	color: #fff;
+	padding: 3px;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s all ease;
+	border-radius: 2px;
+}
+.error-label {
+	background-color: #f75e5e;
+}
+.check-label {
+	background-color: #35ca7c;
+	width: 16px;
+	height: 16px;
+}
+.check-label:after,
+.check-label:before {
+	position: absolute;
+	content: '';
+	background-color: #fff;
+	height: 2px;
+}
+.check-label:after {
+	width: 5px;
+	transform: rotate(20deg);
+	bottom: 4px;
+	left: 4px;
+}
+.check-label:before {
+	width: 10px;
+	transform: rotate(110deg);
+	right: 1px;
+	top: 7px;
+}
+
+.form-line.success .form-input {
+	border-bottom-color: #35ca7c;
+}
+.form-line.error label {
+	color: #f75e5e;
+}
+.form-line.error .form-input {
+	color: #4e0c0c;
+	border-bottom-color: #f75e5e;
+}
+.form-line.error .error-label,
+.form-line.success .check-label {
+	opacity: 1;
+	visibility: visible;
+}
+
+.headline {
+	display: block;
+	text-align: center;
+	margin-bottom: 40px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 30px;
+	letter-spacing: 5px;
+	position: relative;
+}
+.headline span {
+	position: relative;
+	z-index: 2;
+}
+.headline:before {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	background-color: rgba(175, 253, 198, 0.5);
+	height: 12px;
+	width: 155px;
+	bottom: -3px;
+	left: 5px;
+}
+
+.form-button {
+	border: none;
+	outline: none;
+	padding: 20px 60px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	color: #000;
+	border-radius: 3px;
+	cursor: pointer;
+	background: #8cf1d0;
+	display: block;
+	transition: .3s all ease;
+	position: absolute;
+	bottom: 40px;
+	letter-spacing: 2px;
+}
+.form-button:hover {
+	background-color: #78e6c2;
+	-webkit-box-shadow: 0px 10px 25px 0px rgba(72,72,72,0.1);
+	-moz-box-shadow: 0px 10px 25px 0px rgba(72,72,72,0.1);
+	box-shadow: 0px 10px 25px 0px rgba(72,72,72,0.1);
+	bottom: 45px;
+}
+
+@media (max-width: 500px) {
+	.form-container {
+		width: 300px;
+		padding: 30px 20px 100px;
+	}
+	.form-button {
+		bottom: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+	}
+	.form-button:hover {
+		bottom: 30px;
+	}
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #2c2f33;
+    color: #fff;
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif; /* Sleek, modern font */
+    position: relative;
+    box-shadow: 0px -2px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.8;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #dcdcdc;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links li {
+    margin-left: 15px;
+}
+
+.social-links li a {
+    color: #dcdcdc;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #7289da; /* Background for the icons */
+    width: 40px;
+    height: 40px;
+}
+
+.social-links li a i {
+    font-size: 18px;
+}
+
+.social-links li a:hover {
+    background-color: #5865f2; /* Slightly lighter color on hover */
+    transform: scale(1.1);
+    color: #fff;
+}
+
+/* Footer Hover Effect */
+footer:hover {
+    background-color: #23272a;
+    transition: background-color 0.5s ease-in-out;
+}
+
+footer p:hover {
+    color: #ffffff;
+    transition: color 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        padding-top: 15px;
+    }
+
+    footer p {
+        margin-bottom: 20px;
+    }
+
+    .social-links li {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 30px 0;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    .social-links li a {
+        font-size: 16px;
+        width: 35px;
+        height: 35px;
+    }
+}

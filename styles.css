@@ -205,19 +205,19 @@ strong {
 
 /* Enhanced Button Styles */
 .btn {
-    display: inline-block; /* Treat as a block for padding */
-    padding: 12px 24px; /* Standard padding for larger devices */
+    display: inline-block; /* Inline block for flexible sizing */
+    padding: 12px 24px; /* Standard padding */
     background: linear-gradient(135deg, rgb(238, 54, 54), rgb(255, 120, 120)); /* Gradient background */
-    color: #fff; /* Button text color */
-    text-decoration: none; /* Remove underline */
+    color: #fff; /* Text color */
+    text-decoration: none; /* No underline */
     border-radius: 25px; /* Rounded corners */
     font-weight: bold; /* Bold text */
     font-size: 1rem; /* Standard font size */
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: all 0.3s ease; /* Smooth transition */
-    width: auto; /* Makes the button adapt to its content */
+    transition: all 0.3s ease; /* Smooth hover transition */
+    width: auto; /* Width adapts to content */
     text-align: center; /* Center the text */
-    max-width: 100%; /* Ensure button doesn't overflow */
+    max-width: 250px; /* New: Maximum width of the button */
 }
 
 /* Hover effect */
@@ -227,31 +227,33 @@ strong {
     transform: translateY(-2px); /* Lift effect */
 }
 
-/* Adjustments for tablet and larger mobile screens (768px and below) */
+/* Tablet and larger mobile screens (768px and below) */
 @media (max-width: 768px) {
     .btn {
-        padding: 10px 20px; /* Reduce padding slightly */
-        font-size: 0.95rem; /* Slightly reduce font size */
-        width: 40%; /* Ensure width adapts to content */
+        padding: 10px 20px; /* Slightly reduced padding */
+        font-size: 0.95rem; /* Slightly smaller font size */
+        max-width: 220px; /* New: Reduced max-width for tablets */
     }
 }
 
-/* Adjustments for mobile phones (480px and below) */
+/* Mobile phones (480px and below) */
 @media (max-width: 480px) {
     .btn {
-        padding: 8px 16px; /* Further reduce padding for smaller devices */
-        font-size: 0.9rem; /* Reduce font size for smaller screens */
-        width: 90%; /* Make the button fill most of the width on mobile */
-        margin: 0 auto; /* Center the button */
+        padding: 15px 16px; /* Further reduced padding */
+        font-size: 0.9rem; /* Smaller font size */
+        width: 90%; /* Ensure button adapts to mobile screen */
+        max-width: 120px; /* New: Maximum width constraint for mobile */
+        margin: 0 auto; /* Center button on mobile */
     }
 }
 
-/* Adjustments for extra small mobile screens (320px and below) */
+/* Extra small screens (320px and below) */
 @media (max-width: 320px) {
     .btn {
-        padding: 6px 14px; /* Even smaller padding for extra small screens */
-        font-size: 0.85rem; /* Further reduce font size */
-        width: 100%; /* Make the button take full width on very small screens */
+        padding: 6px 14px; /* Minimal padding for very small screens */
+        font-size: 0.85rem; /* Small font size */
+        width: 100%; /* Take full width on small screens */
+        max-width: 20px; /* New: Max-width constraint for very small screens */
     }
 }
 
@@ -335,16 +337,16 @@ strong {
 @media (max-width: 480px) {
     .social-media {
         flex-direction: row; /* Stack icons vertically on very small screens */
-        gap: 5px; /* Maintain gap between stacked icons */
+        gap: 10px; /* Maintain gap between stacked icons */
     }
 
     .social-media a {
-        width: 10px; /* Even smaller icons for very small screens */
-        height: 10px;
+        width: 20px; /* Even smaller icons for very small screens */
+        height: 20px;
     }
 
     .social-media i {
-        font-size: 10px; /* Adjust icon size for very small screens */
+        font-size: 20px; /* Adjust icon size for very small screens */
     }
 }
 
@@ -560,133 +562,148 @@ strong {
 
 /* Experiences Section Styles */
 .experiences-section {
-    padding: 200px 0;
+    padding: 100px 0; /* Reduced top padding */
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+   
+}
+
+/* Center and style the heading */
+.experiences-section {
+    padding: 100px 0; /* Adjusted padding */
     background: linear-gradient(135deg, #ece9e6, #ffffff);
     position: relative;
     overflow: hidden;
 }
 
+/* Center and style the heading at the top */
 .section-heading {
-    text-align: center; /* Center the heading */
+    position: absolute; /* Position the heading at the top */
+    top: 20px; /* Adjust the distance from the top of the section */
+    left: 50%; /* Align horizontally to the center */
+    transform: translateX(-50%); /* Ensure proper centering */
+    text-align: center; /* Center the text itself */
     font-size: 3.5rem; /* Larger font size for emphasis */
     font-weight: 700; /* Bolder font for prominence */
     color: #007bff; /* Bright accent color */
-    margin-bottom: 40px;
-    position: relative;
-    display: inline-block; /* Allows for the ::before element */
     text-transform: uppercase; /* Uppercase letters for a modern look */
-    letter-spacing: 1px; /* Space between letters for a clean look */
+    letter-spacing: 1px; /* Space between letters */
+    margin: 0; /* Remove default margins */
 }
 
+/* Underline effect */
 .section-heading::before {
     content: "";
     position: absolute;
-    width: 80px; /* Line width */
-    height: 5px; /* Line height */
-    background-color: #007bff; /* Bright accent color */
-    bottom: -10px; /* Position below the text */
+    width: 80px;
+    height: 5px;
+    background-color: #007bff;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .section-heading:hover::before {
-    width: 100%; /* Expand on hover */
-    background-color: #0056b3; /* Darker shade on hover */
+    width: 100%;
+    background-color: #0056b3;
 }
+
 
 .experience-list {
     display: flex;
-    flex-wrap: wrap; /* Allow cards to wrap for responsiveness */
-    justify-content: center; /* Center align items */
-    gap: 30px; /* Space between items */
-    margin-top: 20px; /* Space above experience cards */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .experience-card {
-    background-color: #ffffff; /* White background for cards */
-    border-radius: 12px; /* Rounded corners for a softer look */
-    padding: 30px; /* More padding for spacious feel */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
-    transform: translateY(30px); /* Initial position for animation */
-    opacity: 0; /* Initial opacity for fade-in effect */
-    transition: all 0.4s ease; /* Smooth transition */
-    width: 100%; /* Full width on small screens */
-    max-width: 400px; /* Max width for cards */
-    text-align: center; /* Center text within cards */
-    cursor: pointer; /* Pointer cursor to indicate interactivity */
-    position: relative; /* For pseudo-elements */
-    overflow: hidden; /* Hide overflowing elements */
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px; /* Add some spacing below the heading */
 }
 
+/* Hover and animation effects */
 .experience-card:hover {
-    transform: translateY(-10px); /* Lift effect on hover */
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 .experience-card::after {
     content: "";
     position: absolute;
-    width: 100%; /* Full width overlay */
-    height: 100%; /* Full height overlay */
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 123, 255, 0.1); /* Soft blue overlay */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Smooth transition for overlay */
+    background-color: rgba(0, 123, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .experience-card:hover::after {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1;
 }
 
 .experience-card h3 {
-    font-size: 2rem; /* Larger font for job title */
-    color: #007bff; /* Bright accent color for titles */
-    margin-bottom: 10px; /* Space below title */
-    transition: color 0.3s ease; /* Transition for color change */
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
 .experience-card:hover h3 {
-    color: #0056b3; /* Darker shade on hover */
+    color: #0056b3;
 }
 
 .company-name {
-    font-style: italic; /* Italic for company name */
-    color: #666; /* Gray color */
-    font-weight: bold; /* Bold for emphasis */
-    margin: 5px 0; /* Space above and below */
+    font-style: italic;
+    color: #666;
+    font-weight: bold;
+    margin: 5px 0;
 }
 
 .experience-date {
-    color: #999; /* Lighter gray for dates */
+    color: #999;
     margin: 10px 0;
-    font-size: 0.9rem; /* Slightly smaller font */
+    font-size: 0.9rem;
 }
 
 .experience-description {
-    color: #333; /* Dark text for descriptions */
-    line-height: 1.6; /* Improved line height for readability */
+    color: #333;
+    line-height: 1.6;
 }
 
 /* Icon Styles */
 .experience-icon {
-    font-size: 50px; /* Size of the icon */
-    color: #007bff; /* Color of the icon */
-    margin-bottom: 15px; /* Space below icon */
-    transition: transform 0.3s ease; /* Smooth transition */
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 
 .experience-card:hover .experience-icon {
-    transform: scale(1.1); /* Scale up icon on hover */
+    transform: scale(1.1);
 }
 
 /* Animation on Scroll */
 .experience-card.visible {
-    transform: translateY(0); /* Move to original position */
-    opacity: 1; /* Fade in */
-    transition: all 0.5s ease-in-out; /* Smooth fade-in transition */
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
 }
+
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
@@ -705,6 +722,8 @@ strong {
     }
 
     .section-heading {
+        justify-content: center;
+        align-items: start;
         font-size: 1.5rem; /* Even smaller heading */
     }
 }

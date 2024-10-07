@@ -232,7 +232,7 @@ strong {
     .btn {
         padding: 10px 20px; /* Reduce padding slightly */
         font-size: 0.95rem; /* Slightly reduce font size */
-        width: auto; /* Ensure width adapts to content */
+        width: 40%; /* Ensure width adapts to content */
     }
 }
 

@@ -206,22 +206,55 @@ strong {
 /* Enhanced Button Styles */
 .btn {
     display: inline-block; /* Treat as a block for padding */
-    padding: 15px 30px; /* Increased padding for a larger, more prominent button */
-    background: linear-gradient(135deg, rgb(238, 54, 54), rgb(255, 120, 120)); /* Add a gradient background */
+    padding: 12px 24px; /* Standard padding for larger devices */
+    background: linear-gradient(135deg, rgb(238, 54, 54), rgb(255, 120, 120)); /* Gradient background */
     color: #fff; /* Button text color */
     text-decoration: none; /* Remove underline */
-    border-radius: 30px; /* More rounded corners for a modern look */
-    font-weight: bold; /* Make the text bold */
-    font-size: 1.1rem; /* Slightly increase the font size */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 25px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    font-size: 1rem; /* Standard font size */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition */
+    width: auto; /* Makes the button adapt to its content */
+    text-align: center; /* Center the text */
+    max-width: 100%; /* Ensure button doesn't overflow */
 }
 
+/* Hover effect */
 .btn:hover {
-    background: linear-gradient(135deg, rgba(238, 54, 54, 0.9), rgba(255, 120, 120, 0.9)); /* Darken the gradient on hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Increase the shadow on hover */
-    transform: translateY(-3px); /* Slight lift effect on hover */
+    background: linear-gradient(135deg, rgba(238, 54, 54, 0.9), rgba(255, 120, 120, 0.9)); /* Darker gradient */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Increased shadow */
+    transform: translateY(-2px); /* Lift effect */
 }
+
+/* Adjustments for tablet and larger mobile screens (768px and below) */
+@media (max-width: 768px) {
+    .btn {
+        padding: 10px 20px; /* Reduce padding slightly */
+        font-size: 0.95rem; /* Slightly reduce font size */
+        width: auto; /* Ensure width adapts to content */
+    }
+}
+
+/* Adjustments for mobile phones (480px and below) */
+@media (max-width: 480px) {
+    .btn {
+        padding: 8px 16px; /* Further reduce padding for smaller devices */
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+        width: 90%; /* Make the button fill most of the width on mobile */
+        margin: 0 auto; /* Center the button */
+    }
+}
+
+/* Adjustments for extra small mobile screens (320px and below) */
+@media (max-width: 320px) {
+    .btn {
+        padding: 6px 14px; /* Even smaller padding for extra small screens */
+        font-size: 0.85rem; /* Further reduce font size */
+        width: 100%; /* Make the button take full width on very small screens */
+    }
+}
+
 
 /* Image Section */
 .hero-image {

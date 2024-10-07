@@ -250,7 +250,8 @@ strong {
     justify-content: center; /* Center the icons */
     gap: 15px; /* Space between icons */
     margin-top: 15px; /* Space above the icons */
-    margin-left: -70px;
+    /* Remove the margin-left to avoid hardcoded positioning */
+    margin-left: 0;
 }
 
 .social-media a {
@@ -263,7 +264,6 @@ strong {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     text-decoration: none; /* Remove underline from links */
-   
 }
 
 .social-media i {
@@ -281,6 +281,40 @@ strong {
     font-family: 'Font Awesome 5 Brands';
     font-size: 1.2rem; /* Adjust icon size */
 }
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .social-media {
+        gap: 10px; /* Reduce space between icons */
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .social-media a {
+        width: 20px; /* Make icons smaller */
+        height: 20px; /* Make icons smaller */
+    }
+
+    .social-media i {
+        font-size: 10px; /* Adjust icon size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .social-media {
+        flex-direction: row; /* Stack icons vertically on very small screens */
+        gap: 5px; /* Maintain gap between stacked icons */
+    }
+
+    .social-media a {
+        width: 10px; /* Even smaller icons for very small screens */
+        height: 10px;
+    }
+
+    .social-media i {
+        font-size: 10px; /* Adjust icon size for very small screens */
+    }
+}
+
 .hamburger {
     display: none; /* Hidden by default */
     font-size: 30px; /* Size of the hamburger icon */

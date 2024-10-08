@@ -96,6 +96,7 @@ body {
 .hero {
     position: relative; /* Allows for positioning of pseudo-elements */
     overflow: hidden; /* Hides any overflow from the pseudo-element */
+    height: 100vh; /* Ensures the hero section covers the full viewport height */
 }
 
 .hero::before {
@@ -106,11 +107,11 @@ body {
     right: 0;
     bottom: 0; /* Cover the entire hero section */
     background-image: url('Images/background.jpg'); /* Background image */
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center; /* Centers the image */
+    background-size: 110%; /* Slightly larger image for more visible animation */
+    background-position: center; /* Centers the image initially */
     animation: floating 10s ease-in-out infinite; /* Animation for floating effect */
-    filter: blur(8px); /* Blur effect */
-    z-index: 1; /* Position below the text */
+    filter: blur(8px); /* Blur effect on background */
+    z-index: 0; /* Ensures it's below other elements */
 }
 
 .hero::after {
@@ -121,29 +122,29 @@ body {
     right: 0;
     bottom: 0; /* Cover the entire hero section */
     background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
-    z-index: 1; /* Position below the text */
+    z-index: 1; /* Ensures it's above the background but below content */
 }
 
 .hero .container {
     position: relative; /* Needed for positioning child elements */
-    z-index: 2; /* Ensure content is above the overlay */
+    z-index: 2; /* Ensure content is above the background and overlay */
     color: #ffffff; /* Text color */
     padding: 300px 20px; /* Top & bottom padding */
     text-align: left; /* Align text to the left */
-    padding-right: 400px;
-    padding-left: 250px;
+    padding-right: 400px; /* Adjust the right padding */
+    padding-left: 250px; /* Adjust the left padding */
 }
 
 /* Keyframes for floating effect */
 @keyframes floating {
     0% {
-        background-position: 0% 0%;
+        background-position: 0% 0%; /* Initial background position */
     }
     50% {
-        background-position: 0% 10%;
+        background-position: 0% 10%; /* Move background slightly */
     }
     100% {
-        background-position: 0% 0%;
+        background-position: 0% 0%; /* Final position of the background */
     }
 }
 
@@ -274,7 +275,7 @@ strong {
 }
 
 .hero-image img:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Adds a shadow effect on hover */
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3); /* Adds a shadow effect on hover */
 }
 
 
@@ -549,7 +550,7 @@ strong {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .skillsGrid {
         flex-direction: column;
         align-items: center;
@@ -557,6 +558,19 @@ strong {
 
     .skillItem {
         margin: 15px 0;
+    }
+    .skillName::after {
+        content: '';
+        display: block;
+        width: 0%;
+        height: 0px;
+        background: #4A90E2; /* Accent color for the underline */
+        margin: 10px auto 0; /* Centered and added margin */
+        transition: width 0.3s ease; /* Smooth transition for the underline */
+    }
+    
+    .skillCard:hover .skillName::after {
+        width: 100%; /* Full width on hover */
     }
 }
 

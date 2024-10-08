@@ -333,6 +333,7 @@ strong {
     .social-media i {
         font-size: 10px; /* Adjust icon size for smaller screens */
     }
+    
 }
 
 @media (max-width: 480px) {
@@ -342,13 +343,14 @@ strong {
     }
 
     .social-media a {
-        width: 20px; /* Even smaller icons for very small screens */
-        height: 20px;
+        width: 15px; /* Even smaller icons for very small screens */
+        height: 15px;
     }
 
     .social-media i {
-        font-size: 20px; /* Adjust icon size for very small screens */
+        font-size: 10px; /* Adjust icon size for very small screens */
     }
+    
 }
 
 .hamburger {

@@ -585,6 +585,7 @@ strong {
 
 /* Center and style the heading */
 .experiences-section {
+   align-items: center;
     padding: 100px 0; /* Adjusted padding */
     background: linear-gradient(135deg, #ece9e6, #ffffff);
     position: relative;

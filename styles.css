@@ -585,13 +585,10 @@ strong {
 
 /* Center and style the heading */
 .experiences-section {
-   align-items: center;
     padding: 100px 0; /* Adjusted padding */
     background: linear-gradient(135deg, #ece9e6, #ffffff);
     position: relative;
     overflow: hidden;
-    display: flex;
-
 }
 
 /* Center and style the heading at the top */

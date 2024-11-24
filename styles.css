@@ -590,6 +590,13 @@ strong {
     background: linear-gradient(135deg, #ece9e6, #ffffff);
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
 }
 
 /* Center and style the heading at the top */
